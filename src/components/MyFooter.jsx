@@ -23,10 +23,18 @@ export default function MyFooter() {
                     <p><Button variant='link'>Chi siamo</Button></p>
                 </Col>
                 <Col className='mt-4'>
-                    <Button variant='link'><FaFacebook /></Button>
-                    <Button variant='link'><FaInstagram /></Button>
-                    <Button variant='link'><FaTwitter /></Button>
-                    <Button variant='link'><FaYoutube /></Button>
+                    <Button variant='link'>
+                        <FaFacebook />
+                    </Button>
+                    <Button variant='link'>
+                        <FaInstagram />
+                    </Button>
+                    <Button variant='link'>
+                        <FaTwitter />
+                    </Button>
+                    <Button variant='link'>
+                        <FaYoutube />
+                    </Button>
                 </Col>
             </Row>
         </Container>
