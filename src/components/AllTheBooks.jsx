@@ -1,25 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import fantasy from '../data/fantasy.json';
-import { Row , Col, Card, Container } from 'react-bootstrap';
+import { Row , Container } from 'react-bootstrap';
+import './AllTheBooks.css';
+//import { useState } from 'react';
+import SingleBook from './SingleBook';
 
 export default function AllTheBooks() {
+  //const [inputBook , setInputBook] = useState('');
   return (
     <Container>
-    <Row className="g-2">
-      {fantasy.map((book) => {
-        return (
-          <Col xs={12} md={4} key={book.asin}>
-            <Card className="d-flex flex-column">
-              <Card.Img variant="top" src={book.img} />
-              <Card.Body>
-                <Card.Title>{book.title}</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-        )
-      })}
-    </Row>
+      <div className='text-center'>
+        <input type="text" placeholder='Cerca libro..' className='mb-3 py-2 ps-3 rounded-pill border border-1'/>
+      </div>
+      <Row className='g-2'>
+        {fantasy.map((book) => {
+          return (
+            <SingleBook 
+              key= {book.asin}
+              img = {book.img}
+              title = {book.title}
+            />
+          )
+        })}
+      </Row>
     </Container>
   )
 }
