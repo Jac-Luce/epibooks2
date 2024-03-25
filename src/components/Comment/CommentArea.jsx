@@ -4,7 +4,7 @@ import AddComment from './AddComment';
 
 export default function CommentArea({asin}) {
 
-    const endpoint = `https://striveschool-api.herokuapp.com/api/books/:${asin}/comments/ `;
+    const endpoint = `https://striveschool-api.herokuapp.com/api/books/${asin}/comments/ `;
     const apiKey = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0Yjk3ZTljNDM3MDAwMTkzYzM2MjkiLCJpYXQiOjE3MTA2Njk3MjIsImV4cCI6MTcxMTg3OTMyMn0.bw4nHXkV9EIAQ7B5EZSyCc9uBh8nLH1G3ygK1tTqUnU';
 
     const [resultComment, setResultComment] = useState([]);
@@ -17,7 +17,7 @@ export default function CommentArea({asin}) {
         if (response.ok){
 
           const result = await response.json();
-
+           // console.log(result);
           setResultComment(result);
         } else{
           const error = new Error(`Error Status: ${response.status}`);

@@ -1,27 +1,34 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import fantasy from '../../data/fantasy.json';
+//import fantasy from '../../data/fantasy.json';
 import { Row , Container, Col } from 'react-bootstrap';
 import './AllTheBooks.css';
-import { useState } from 'react';
+//import { useState } from 'react';
 import SingleBook from './SingleBook';
+import  { ThemeContext } from '../../contextProvider/ThemeContextProvider';
+import { useContext } from 'react';
 
-export default function AllTheBooks() {
+export default function AllTheBooks(props) {
+
+  const {searchBook} = props;
+  /*
   //Stato dell'input
   const [inputBook , setInputBook] = useState('');
   //Stato della ricerca
-  const [searchBook , setSearchBook] = useState([fantasy]);
+  const [searchBook , setSearchBook] = useState(fantasy);
 
   //Funzione che filtra l'array di libri fantasy
   function lookFilterBook (el) {
     setInputBook(el);
     let filteredBooks = fantasy.filter((book)=> book.title.toLowerCase().includes(inputBook.toLowerCase()));
     setSearchBook(filteredBooks);
-  }
+  } */
+
+  const {theme} = useContext(ThemeContext);
 
   return (
-    <Container>
-      <div className='text-center'>
+    <Container bg={theme} variant={theme}>
+      {/*<div className='text-center'>
         <input 
         type="text" 
         placeholder='Cerca libro..' 
@@ -29,8 +36,8 @@ export default function AllTheBooks() {
         value={inputBook} 
         onChange={(el) => lookFilterBook(el.target.value)}
         />
-      </div>
-      <Row className='g-2'>
+      </div> */}
+      <Row className='g-2' bg={theme} variant={theme}>
         {
           searchBook.map((book) => {
           return (

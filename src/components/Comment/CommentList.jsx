@@ -10,7 +10,7 @@ export default function CommentList(props) {
     <>
       <ListGroup as='ol' numbered>
         { resultComment.map((comment) => (
-          <SingleComment comment={comment.comment} rate={comment.rate}/>
+          <SingleComment key={comment._id} comment={comment.comment} rate={comment.rate}/>
         ))}
           
      </ListGroup>
