@@ -9,7 +9,7 @@ export default function ThemeButton() {
     const {theme, setTheme} = useContext(ThemeContext);
 
   return (
-    <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+    <Button className='mx-2' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
         <IoSunny />
     </Button>
   )

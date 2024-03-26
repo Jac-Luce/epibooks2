@@ -34,7 +34,7 @@ export default function CommentArea({asin}) {
 
     useEffect(() => {
       getResults();
-    }, []);
+    }, [asin]);
 
   return (
 

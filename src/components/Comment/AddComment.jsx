@@ -44,8 +44,8 @@ export default function AddComment({asin, getResults}) {
     <>
       <Form className='mb-3 mt-3' onSubmit={postComment}>
         <Form.Group className='mb-3'>
-          <Form.Label>Aggiungi un commento</Form.Label>
-          <Form.Control type='text' placeholder='Lascia un commento..' onChange={(e) => setComment(e.target.value)}/>
+          <Form.Label>Lascia una recensione</Form.Label>
+          <Form.Control type='text' placeholder='Scrivi qui la tua recensione..' onChange={(e) => setComment(e.target.value)}/>
         </Form.Group>
         <Form.Group className='mb-3'>
           <Form.Label>Aggiungi valutazione</Form.Label>

@@ -27,7 +27,7 @@ export default function MyNav(props) {
         <input 
         type="text" 
         placeholder='Cerca libro..' 
-        className='mb-3 py-2 ps-3 rounded-pill border border-1'
+        className='py-2 ps-3 rounded-pill border border-1'
         value={inputBook} 
         onChange={(el) => lookFilterBook(el.target.value)}
         />
