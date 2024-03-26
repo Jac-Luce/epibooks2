@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import fantasy from '../../data/fantasy.json';
 import { Row , Container, Col } from 'react-bootstrap';
 import './AllTheBooks.css';
-//import { useState } from 'react';
 import SingleBook from './SingleBook';
 import  { ThemeContext } from '../../contextProvider/ThemeContextProvider';
 import { useContext } from 'react';
+import CommentArea from '../Comment/CommentArea';
 
 export default function AllTheBooks(props) {
 
@@ -26,6 +26,8 @@ export default function AllTheBooks(props) {
 
   const {theme} = useContext(ThemeContext);
 
+  const [selected, setSelected] = useState(false);
+
   return (
     <Container bg={theme} variant={theme}>
       {/*<div className='text-center'>
@@ -37,15 +39,27 @@ export default function AllTheBooks(props) {
         onChange={(el) => lookFilterBook(el.target.value)}
         />
       </div> */}
-      <Row className='g-2' bg={theme} variant={theme}>
-        {
-          searchBook.map((book) => {
-          return (
-            <Col xs={12} md={3} key={book.asin} >
-              <SingleBook book = {book} />
-            </Col>
-          )
-        })}
+      <Row>
+        <Col md={8}>
+          <Row className='g-2' bg={theme} variant={theme}>
+            {
+              searchBook.map((book) => {
+              return (
+                <Col xs={12} md={3} key={book.asin}>
+                  <SingleBook 
+                    book = {book} 
+                    selected = {selected} 
+                    setSelected = {setSelected}
+                    
+                  />
+                </Col>
+              )
+            })}
+          </Row>
+        </Col>
+        <Col md={4}>
+          <CommentArea asin = {selected}/>
+        </Col>
       </Row>
     </Container>
   )

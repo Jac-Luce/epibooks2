@@ -52,7 +52,7 @@ export default function AddComment({asin, getResults}) {
           <Form.Control type='number' placeholder='Lascia un punteggio da 1 a 5' onChange={(e) => setRate(e.target.value)} />
         </Form.Group>
       </Form>
-      <Button onClick={() => postComment()}>Invia</Button>
+      <Button className='mb-3' onClick={() => postComment()}>Invia</Button>
     </>
   )
 }
