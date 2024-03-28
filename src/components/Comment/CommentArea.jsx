@@ -33,12 +33,12 @@ export default function CommentArea({asin}) {
     }
 
     useEffect(() => {
-      getResults();
+      if(asin){
+        getResults();
+      }
     }, [asin]);
 
   return (
-
-
     <>
       <AddComment asin={asin} getResults={getResults}/>
       <CommentList resultComment = {resultComment} />

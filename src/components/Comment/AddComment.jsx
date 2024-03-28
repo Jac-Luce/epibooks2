@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap';
+import { ThemeContext } from '../../contextProvider/ThemeContextProvider';
+import { useContext } from 'react';
 
 export default function AddComment({asin, getResults}) {
 
@@ -8,6 +10,8 @@ export default function AddComment({asin, getResults}) {
 
   const [comment, setComment] = useState("");
   const [rate, setRate] = useState();
+
+  const {theme} = useContext(ThemeContext);
 
   async function postComment() {
 
@@ -42,13 +46,13 @@ export default function AddComment({asin, getResults}) {
 
   return (
     <>
-      <Form className='mb-3 mt-3' onSubmit={postComment}>
+      <Form className='mb-3 mt-3' onSubmit={postComment} bg={theme} variant={theme}>
         <Form.Group className='mb-3'>
-          <Form.Label>Lascia una recensione</Form.Label>
+          <Form.Label className={theme === 'dark' ? 'text-white-50' : null}>Lascia una recensione</Form.Label>
           <Form.Control type='text' placeholder='Scrivi qui la tua recensione..' onChange={(e) => setComment(e.target.value)}/>
         </Form.Group>
         <Form.Group className='mb-3'>
-          <Form.Label>Aggiungi valutazione</Form.Label>
+          <Form.Label className={theme === 'dark' ? 'text-white-50' : null}>Aggiungi valutazione</Form.Label>
           <Form.Control type='number' placeholder='Lascia un punteggio da 1 a 5' onChange={(e) => setRate(e.target.value)} />
         </Form.Group>
       </Form>

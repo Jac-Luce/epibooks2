@@ -12,7 +12,7 @@ export default function MyNav(props) {
   const {inputBook, lookFilterBook} = props;
 
   return (
-    <Navbar expand="lg" /*className="bg-body-tertiary"*/ bg={theme} variant={theme} >
+    <Navbar expand="lg" bg={theme} variant={theme} >
       <Container>
         <Navbar.Brand href="#home">React-EpicBooks</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

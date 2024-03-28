@@ -6,13 +6,9 @@ import './Welcome.css';
 export default function Welcome() {
   return (
       <Container className='text-center bg-welcome'>
-        <div className="m-3 p-3 ">
-            <p>Hey, che bello vederti!</p>
-            <hr />
-            <h5 className="mb-0">
-            Benvenuto in React-EpicBooks!
-            </h5>
-        </div>   
+        <p className="mx-3 mt-3 px-3 pt-3">Hey, che bello vederti!</p>
+        <hr />
+        <h5 className="m-3 px-3 pb-3 "> Benvenuto in React-EpicBooks! </h5>
       </Container> 
   )
 }

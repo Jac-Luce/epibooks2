@@ -6,6 +6,9 @@ import Welcome from './components/Welcome';
 import AllTheBooks from './components/Books/AllTheBooks';
 import fantasy from './data/fantasy.json';
 import { useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { ThemeContext } from './contextProvider/ThemeContextProvider';
+import { useContext } from 'react';
 
 export default function App() {
 
@@ -21,12 +24,17 @@ export default function App() {
      setSearchBook(filteredBooks);
    }
 
+   const {theme} = useContext(ThemeContext);
+
   return (
-    <>
+
+    <Container fluid className={'bg-' + theme}>
       <MyNav inputBook= {inputBook} lookFilterBook= {lookFilterBook}/>
-      <Welcome />
-      <AllTheBooks searchBook={searchBook}/>
+      <Container fluid>
+        <Welcome />
+        <AllTheBooks searchBook={searchBook}/>
+      </Container>
       <MyFooter />
-    </>
+    </Container>
   )
 }

@@ -28,7 +28,7 @@ export default function SingleBook(props) {
       >
         <Card.Img variant="top" src={book.img} className='img-style'/>
         <Card.Body>
-          <Card.Title>{book.title}</Card.Title>
+          <Card.Title className={theme === 'dark' ? 'text-light' : null}>{book.title}</Card.Title>
         </Card.Body>
       </Card>
       {/*selected && <CommentArea asin={book.asin}/>*/}

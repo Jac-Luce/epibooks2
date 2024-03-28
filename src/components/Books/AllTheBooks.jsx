@@ -41,7 +41,7 @@ export default function AllTheBooks(props) {
       </div> */}
       <Row>
         <Col md={8}>
-          <Row className='g-2' bg={theme} variant={theme}>
+          <Row className='g-2' >
             {
               searchBook.map((book) => {
               return (
@@ -57,7 +57,7 @@ export default function AllTheBooks(props) {
             })}
           </Row>
         </Col>
-        <Col md={4}>
+        <Col md={4} >
           <CommentArea asin = {selected}/>
         </Col>
       </Row>
