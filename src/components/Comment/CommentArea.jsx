@@ -6,8 +6,9 @@ export default function CommentArea({asin}) {
 
     //const endpoint = `https://striveschool-api.herokuapp.com/api/books/${asin}/comments/ `;
     const endpoint = `https://striveschool-api.herokuapp.com/api/comments/${asin}`;
-    const apiKey = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0Yjk3ZTljNDM3MDAwMTkzYzM2MjkiLCJpYXQiOjE3MTA2Njk3MjIsImV4cCI6MTcxMTg3OTMyMn0.bw4nHXkV9EIAQ7B5EZSyCc9uBh8nLH1G3ygK1tTqUnU';
-
+    //const apiKey = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0Yjk3ZTljNDM3MDAwMTkzYzM2MjkiLCJpYXQiOjE3MTA2Njk3MjIsImV4cCI6MTcxMTg3OTMyMn0.bw4nHXkV9EIAQ7B5EZSyCc9uBh8nLH1G3ygK1tTqUnU';
+    const apiKey = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0Yjk3ZTljNDM3MDAwMTkzYzM2MjkiLCJpYXQiOjE3MTIxMzI1MDQsImV4cCI6MTcxMzM0MjEwNH0.mYWUiRYFvaP1_QuZBMD0XtnZgzI1C2ElhYksOr2kZkw';
+    
     const [resultComment, setResultComment] = useState([]);
 
     async function getResults() {

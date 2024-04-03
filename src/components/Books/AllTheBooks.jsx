@@ -29,7 +29,7 @@ export default function AllTheBooks(props) {
   const [selected, setSelected] = useState(false);
 
   return (
-    <Container bg={theme} variant={theme}>
+    <Container bg={theme} variant={theme} className='mt-5'>
       {/*<div className='text-center'>
         <input 
         type="text" 
@@ -45,7 +45,7 @@ export default function AllTheBooks(props) {
             {
               searchBook.map((book) => {
               return (
-                <Col xs={12} md={3} key={book.asin}>
+                <Col xs={12} md={4} key={book.asin}>
                   <SingleBook 
                     book = {book} 
                     selected = {selected} 

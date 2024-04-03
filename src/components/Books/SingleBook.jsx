@@ -5,16 +5,20 @@ import { Card, Button } from 'react-bootstrap';
 //import CommentArea from '../Comment/CommentArea';
 import  { ThemeContext } from '../../contextProvider/ThemeContextProvider';
 import { useContext } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { ImInfo } from "react-icons/im";
 
 export default function SingleBooks(props) {
-  const {asin} = useParams();
+  
+  const navigate = useNavigate();
 
-  const bookNavigate = useNavigate();
+  const bookNavigate = () => {
+    navigate('/bookdetails/' + book.asin);
+  };
 
-    const {book, selected, setSelected} = props;
+  const {book, selected, setSelected} = props;
 
-    const {theme} = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
 
     //Stato selezione copertina del libro
    /* const [selected, setSelected] = useState(false);
@@ -25,16 +29,22 @@ export default function SingleBooks(props) {
 
   return (
     <>
-      <Card className="d-flex flex-column" 
+      <Card className="d-flex flex-column position-relative shadow-sm" 
         border={selected === book.asin ? 'danger' : 'none'}  
         onClick={() => setSelected(book.asin)}  
         bg={theme} variant={theme}
       >
         <Card.Img variant="top" src={book.img} className='img-style'/>
-        <Card.Body>
-          <Card.Title className={theme === 'dark' ? 'text-light' : null}>{book.title}</Card.Title>
-          <Button onClick={() => bookNavigate('/bookdetails')} asin = {asin === book.asin}>More Info</Button>
+        <Card.Body className='p-2'>
+          <Card.Title className={theme === 'dark' ? 'text-light' : null}
+            style={{fontSize: '15px', textAlign: 'center'}}
+          >
+            {book.title}
+          </Card.Title>
         </Card.Body>
+        <Button onClick={bookNavigate} className='btn-sm rounded-circle position-absolute btnInfo'>
+          <ImInfo />
+        </Button>
       </Card>
       {/*selected && <CommentArea asin={book.asin}/>*/}
         

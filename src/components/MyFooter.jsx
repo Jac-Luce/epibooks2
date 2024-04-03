@@ -13,7 +13,7 @@ export default function MyFooter() {
     const {theme} = useContext(ThemeContext);
 
   return (
-    <Container bg={theme} variant={theme}>
+    <Container bg={theme} variant={theme} className='mt-5'>
         <Row>
             <Col>
                 <h6 className={theme === 'dark' ? 'text-light' : null}>React-EpicBooks</h6>

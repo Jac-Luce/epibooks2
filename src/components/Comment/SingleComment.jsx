@@ -7,7 +7,7 @@ export default function SingleComment(props) {
 
   return (
     <>
-        <ListGroup.Item as='li'>
+        <ListGroup.Item as='li' className='px-2 py-1' style={{fontSize: '14px'}}>
             {comment} {rate}
         </ListGroup.Item>
     </>
