@@ -1,8 +1,6 @@
 import React from 'react'
 import './SingleBook.css';
 import { Card, Button } from 'react-bootstrap';
-//import { useState } from 'react';
-//import CommentArea from '../Comment/CommentArea';
 import  { ThemeContext } from '../../contextProvider/ThemeContextProvider';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';

@@ -11,18 +11,6 @@ import CommentArea from '../Comment/CommentArea';
 export default function AllTheBooks(props) {
 
   const {searchBook} = props;
-  /*
-  //Stato dell'input
-  const [inputBook , setInputBook] = useState('');
-  //Stato della ricerca
-  const [searchBook , setSearchBook] = useState(fantasy);
-
-  //Funzione che filtra l'array di libri fantasy
-  function lookFilterBook (el) {
-    setInputBook(el);
-    let filteredBooks = fantasy.filter((book)=> book.title.toLowerCase().includes(inputBook.toLowerCase()));
-    setSearchBook(filteredBooks);
-  } */
 
   const {theme} = useContext(ThemeContext);
 
@@ -30,15 +18,6 @@ export default function AllTheBooks(props) {
 
   return (
     <Container bg={theme} variant={theme} className='mt-5'>
-      {/*<div className='text-center'>
-        <input 
-        type="text" 
-        placeholder='Cerca libro..' 
-        className='mb-3 py-2 ps-3 rounded-pill border border-1'
-        value={inputBook} 
-        onChange={(el) => lookFilterBook(el.target.value)}
-        />
-      </div> */}
       <Row>
         <Col md={8}>
           <Row className='g-2' >
@@ -50,7 +29,6 @@ export default function AllTheBooks(props) {
                     book = {book} 
                     selected = {selected} 
                     setSelected = {setSelected}
-                    
                   />
                 </Col>
               )
